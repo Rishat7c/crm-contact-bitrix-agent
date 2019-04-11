@@ -22,7 +22,7 @@ class ListHelper {
 //            echo "Соединение удалось.<br>\n";
         }
 
-        $sql = "SELECT count(*) FROM EMSCustomers";
+        $sql = "SELECT count(*) FROM Customers";
 
         $stmt = sqlsrv_query($conn,$sql);
 
@@ -42,7 +42,7 @@ class ListHelper {
 
         if($cntRepet >= $cnt) {
 
-            $sql = "SELECT * FROM EMSCustomers WHERE CustomerKey BETWEEN " . $lastId . " AND " . ($lastId + 5000);
+            $sql = "SELECT * FROM Customers WHERE CustomerKey BETWEEN " . $lastId . " AND " . ($lastId + 5000);
 
             $stmt = sqlsrv_query($conn, $sql);
 
